@@ -18,18 +18,19 @@ export const MessageBar = () => {
 
   return (
     <>
-      <footer>
-        <form>
-          <input
-            type="text"
-            id="mensaje"
-            name="mensaje"
-            onChange={handleChange}
-            value={message}
-          />
-          <button onClick={handleClick}>Send</button>
-        </form>
-      </footer>
+      <form className=" flex gap-3 py-4">
+        <input
+          type="text"
+          id="mensaje"
+          name="mensaje"
+          onChange={handleChange}
+          value={message}
+          className=" text-black flex-grow p-1 bg-slate-100"
+        />
+        <button onClick={handleClick} className="px-16 bg-slate-900 text-white">
+          Send
+        </button>
+      </form>
     </>
   )
 }
