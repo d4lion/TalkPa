@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import config from "../../constants/config.js"
 import io from "socket.io-client"
+import { BiSend } from "react-icons/bi"
 
 const socket = io(`${config.url}:${config.port}`)
 
@@ -35,8 +36,11 @@ const MessageBar = () => {
           className=" text-black flex-grow p-1 bg-slate-100"
           maxLength={20}
         />
-        <button onClick={handleClick} className="px-16 bg-slate-900 text-white">
-          Send
+        <button
+          onClick={handleClick}
+          className="mr-5 px-5   sm:px-16 bg-slate-900 text-white"
+        >
+          <BiSend />
         </button>
       </form>
     </>
