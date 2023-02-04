@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "server",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/daliondev/TalkPa/issues"
   },
-  "homepage": "https://github.com/daliondev/TalkPa#readme"
+  "homepage": "https://github.com/daliondev/TalkPa#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "socket.io": "^4.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
