@@ -8,7 +8,6 @@ const socket = io(`${config.url}:${config.port}`)
 
 function App() {
   const [dataMessages, setmessages] = useState([])
-  const [userConnected, setUserConnected] = useState("")
 
   useEffect(() => {
     const receivedMessages = (message) => {
