@@ -20,10 +20,11 @@ app.use(morgan("dev"))
 io.on("connection", (socket) => {
   console.log("User connected: ", socket.id)
 
-  socket.on("message", (message) => {
+  socket.on("message", ({ content, user }) => {
     socket.broadcast.emit("message", {
-      content: message,
-      user: socket.id,
+      content: content,
+      user:
+        user == "Anonymous" ? "Anonymous-" + socket.id.substring(0, 3) : user,
     })
   })
 })
