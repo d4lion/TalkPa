@@ -80,12 +80,23 @@ function App() {
           </div>
         </nav>
 
-        <section className="h-[80%] bg-gray-800 overflow-y-scroll overflow-x-hidden ">
-          <div className="pt-3 pb-3">
+        <section className="h-[80%] bg-gray-800 overflow-y-scroll overflow-x-hidden">
+          <div className={`pt-3 pb-3 `}>
             {dataMessages.map((message, index) => (
-              <p className="text-white ml-3 mt-1" key={index}>
-                {message.user}: {message.content}
-              </p>
+              <div
+                className={`${
+                  message.user != "Me" ? "float-left" : "float-right"
+                } w-[60%] m-1`}
+                key={index}
+              >
+                <p
+                  className={`text-white ml-3 mt-1 ${
+                    message.user != "Me" ? "bg-slate-600" : "bg-gray-900"
+                  }  bg-slate-600 p-2 rounded-md `}
+                >
+                  {message.user}: {message.content}
+                </p>
+              </div>
             ))}
           </div>
         </section>
