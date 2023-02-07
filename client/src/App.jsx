@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import io from "socket.io-client"
 import config from "./constants/config.js"
 import { BiUser, BiSend } from "react-icons/bi"
+import logo from "../src/assets/hoja.svg"
 
 const socket = io(`${config.url}:${config.port}`)
 
@@ -51,13 +52,14 @@ function App() {
   return (
     <div className="bg-[#647c50] px-4">
       <div className="h-screen">
-        <nav className="h-[10%] flex items-center  ">
+        <nav className="h-[10%] flex items-center overflow-hidden ">
           <h1
-            className="text-4xl font-extrabold text-white p-4 flex-grow "
+            className="text-4xl font-extrabold text-white p-4 flex-grow flex gap-2"
             onClick={() => {
               setIconNameStatus(!userNameStatus)
             }}
           >
+            <img src={logo} className="h-10 items-center" />
             TalkPa
           </h1>
           <BiUser
@@ -87,7 +89,7 @@ function App() {
               <div
                 className={`${
                   message.user != "Me" ? "float-left" : "float-right"
-                } w-[60%] ml-1 mr-3 mt-2 `}
+                } w-[60%] ml-1 mr-3 mt-2 overflow-x-scroll `}
                 key={index}
               >
                 <p
@@ -116,7 +118,6 @@ function App() {
             }}
             value={message}
             className=" text-black flex-grow p-1 bg-slate-100 rounded-md "
-            maxLength={20}
           />
           <button
             onClick={handleClick}
