@@ -49,11 +49,11 @@ function App() {
   }
 
   return (
-    <div className="bg-slate-700 px-4">
+    <div className="bg-[#647c50] px-4">
       <div className="h-screen">
         <nav className="h-[10%] flex items-center  ">
           <h1
-            className="text-4xl font-bold text-white p-4 flex-grow "
+            className="text-4xl font-extrabold text-white p-4 flex-grow "
             onClick={() => {
               setIconNameStatus(!userNameStatus)
             }}
@@ -76,25 +76,31 @@ function App() {
               onChange={(e) => {
                 setUserName(e.target.value)
               }}
+              className="px-3 py-1 rounded-md font-thin text-[#647c50]  "
             />
           </div>
         </nav>
 
-        <section className="h-[80%] bg-gray-800 overflow-y-scroll overflow-x-hidden">
-          <div className={`pt-3 pb-3 `}>
+        <section className="h-[80%] bg-[#b2c5b2] overflow-y-scroll overflow-x-hidden rounded-xl">
+          <div className={`pt-3 pb-3  `}>
             {dataMessages.map((message, index) => (
               <div
                 className={`${
                   message.user != "Me" ? "float-left" : "float-right"
-                } w-[60%] m-1`}
+                } w-[60%] ml-1 mr-3 mt-2 `}
                 key={index}
               >
                 <p
-                  className={`text-white ml-3 mt-1 ${
-                    message.user != "Me" ? "bg-slate-600" : "bg-gray-900"
-                  }  bg-slate-600 p-2 rounded-md `}
+                  className={`text-white  ml-3 mt-1 ${
+                    message.user != "Me"
+                      ? "bg-[#1b2727]"
+                      : "bg-[#3c5148] block gap-1"
+                  } sm:p-3  p-1 rounded-md font-light mb-1`}
                 >
-                  {message.user}: {message.content}
+                  <p className="font-bold">{message.user}</p>
+                  {message.content != ""
+                    ? message.content
+                    : "Este mensaje solo lo puedes ver tu"}
                 </p>
               </div>
             ))}
@@ -109,14 +115,14 @@ function App() {
               setmessage(e.target.value)
             }}
             value={message}
-            className=" text-black flex-grow p-1 bg-slate-100"
+            className=" text-black flex-grow p-1 bg-slate-100 rounded-md "
             maxLength={20}
           />
           <button
             onClick={handleClick}
-            className="mr-5 px-5   sm:px-16 bg-slate-900 text-white"
+            className="mr-5 px-5   sm:px-16 bg-[#FFFFFF] text-white rounded-md  "
           >
-            <BiSend />
+            <BiSend className="text-[#647c50]" />
           </button>
         </form>
       </div>
