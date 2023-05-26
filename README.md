@@ -49,12 +49,6 @@ npm run dev
 ```
 
 # Pc display
-![WhatsApp Image 2023-02-04 at 3 10 39 PM](https://user-images.githubusercontent.com/111100025/216787809-45584de2-7437-4571-bbc4-2b90ad8cedb0.jpeg)
-
-
-
-# Mobile display
-
-![WhatsApp Image 2023-02-04 at 3 10 23 PM](https://user-images.githubusercontent.com/111100025/216787791-24ad72af-4151-451c-90da-285d78c46cc0.jpeg)
+![Captura de pantalla 2023-05-25 224834](https://github.com/daliondev/TalkPa/assets/111100025/1116327f-446d-491d-9c87-0a84a703c787)
 
 
